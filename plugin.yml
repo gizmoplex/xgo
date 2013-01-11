@@ -1,0 +1,73 @@
+name: XGo
+main: com.gizmoplex.bukkit.XGoPlugin.XGoPlugin
+version: 0.1
+commands:
+  go:
+    description: Teleport yourself to a predefined location or another player.
+    usage: /go <location>
+    permission: XGoPlugin.go
+    permission-message: You do not have permission to use the go command.
+  go-send:
+    description: Teleport another player to a predefined location or another player.
+    usage: /go-send <player> <location>
+    permission: XGoPlugin.go-send
+    permission-message: You do not have permission to use the go-send command.
+  go-add:
+    description: Add current location to go list.
+    usage: /go-add <location>
+    permission: XGoPlugin.go-add
+    permission-message: You do not have permission to use the go-add command.
+  go-del:
+    description: Delete a specific location from go list.
+    usage: /go-del <location>
+    permission: XGoPlugin.go-del
+    permission-message: You do not have permission to use the go-del command.
+  go-list:
+    description: Display go list.
+    usage: /go-list
+    permission: XGoPlugin.go-list
+    permission-message: You do not have permission to use the go-list command.
+permissions:
+  XGoPlugin.*:
+    description: Access to all "go" teleport commands.
+    children:
+      XGoPlugin.go: true
+      XGoPlugin.go-send: true
+      XGoPlugin.go-add: true
+      XGoPlugin.go-del: true
+      XGoPlugin.go-list: true
+      XGoPlugin.go-player: true
+      XGoPlugin.go-public: true
+      XGoPlugin.go-add-public: true
+      XGoPlugin.go-del-public: true
+      XGoPlugin.go-list-public: true
+  XGoPlugin.go:
+    description: Permission to teleport self.
+    default: op
+  XGoPlugin.go-send:
+    description: Permission to teleport another player.
+  XGoPlugin.go-add:
+    description: Permission to add personal teleport locations.
+    default: op
+  XGoPlugin.go-del:
+    description: Permission to delete personal teleport locations.
+    default: op
+  XGoPlugin.go-list:
+    description: Permission to list personal teleport locations.
+    default: op
+  XGoPlugin.go-player:
+    description: Permission to teleport to other player's location.
+    default: op
+  XGoPlugin.go-public:
+    description: Permission to teleport to public predefined locations.
+    default: op
+  XGoPlugin.go-add-public:
+    description: Permission to add public teleport locations.
+    default: op
+  XGoPlugin.go-del-public:
+    description: Permission to delete public teleport locations.
+    default: op
+  XGoPlugin.go-list-public:
+    description: Permission to list public teleport locations.
+    default: op
+  
